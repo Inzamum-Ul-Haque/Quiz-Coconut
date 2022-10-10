@@ -1,27 +1,35 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import "./Header.css";
+import headerLogo from "../../icons/science.png";
 
 const Header = () => {
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
+      <Navbar className="nav">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand className="fs-2 text-white">
             <img
               alt=""
-              src="/logo.svg"
+              src={headerLogo}
               width="30"
               height="30"
-              className="d-inline-block align-top"
+              className="d-inline-block align-center"
             />{" "}
-            React Bootstrap
+            Quiz Coconut
           </Navbar.Brand>
           <Navbar.Collapse className="justify-content-end">
-            <Nav>
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav className="nav-links fs-4">
+              <Nav.Link>
+                <NavLink to="/">Topics</NavLink>
+              </Nav.Link>
+              <Nav.Link>
+                <NavLink to="/statistics">Statistics</NavLink>
+              </Nav.Link>
+              <Nav.Link>
+                <NavLink to="/blog">Blog</NavLink>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
