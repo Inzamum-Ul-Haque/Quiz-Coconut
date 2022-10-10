@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster:regular);
+
+.heading-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading-container h2 {
+  font-size: 60px;
+  font-family: "Lobster", cursive;
+}
+
+.heading-container h2 > span {
+  font-size: 90px;
+}
+
+.heading-container h2 > span:first-child {
+  color: #5bb318;
+}
+
+.heading-container h2 > span:last-child {
+  color: orange;
+}
+
+.heading-container img {
+  width: 500px;
+  height: 500px;
+}
