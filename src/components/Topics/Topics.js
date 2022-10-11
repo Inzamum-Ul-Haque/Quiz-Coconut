@@ -10,8 +10,8 @@ const Topics = () => {
   return (
     <div className="mt-4">
       <h2>Topics</h2>
-      <div>
-        <Row>
+      <div className="my-5">
+        <Row className="gx-3 gy-4">
           {data.map((topic) => (
             <Topic key={topic.id} topic={topic} />
           ))}
