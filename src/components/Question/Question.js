@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import "./Question.css";
 
 const Question = ({ question, idx }) => {
   const { options } = question;
+  const [rightOption, setRightOption] = useState("");
+
+  const handleChange = (id, e) => {
+    const { value } = e.target;
+    // console.log(id, value);
+    if (value === question.correctAnswer) {
+      console.log("ok");
+    } else {
+      console.log("not ok");
+    }
+  };
 
   return (
     <div className=" rounded-3 p-3 mb-4 question-container">
@@ -25,6 +36,7 @@ const Question = ({ question, idx }) => {
                   name={`quiz ${idx + 1}`}
                   id={idx + 1}
                   value={option}
+                  onChange={(e) => handleChange(question.id, e)}
                 />
                 <label htmlFor={`quiz ${idx + 1}`}>{option}</label>
               </div>
