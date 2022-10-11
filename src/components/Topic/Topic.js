@@ -14,7 +14,7 @@ const Topic = ({ topic }) => {
             <Card.Title>{topic.name}</Card.Title>
             <Card.Text>Total Question: {topic.total}</Card.Text>
           </div>
-          <Link>
+          <Link to={`/quiz/${topic.id}`}>
             <Button className="text-white" variant="primary w-100">
               Start <FontAwesomeIcon icon={faArrowRight} />
             </Button>
