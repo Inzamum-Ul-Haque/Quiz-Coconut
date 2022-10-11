@@ -2,6 +2,22 @@
 
 ## Project Name: Quiz Coconut
 
+This is an educational based website where we can give quiz based on the selected topics. There are some notable features.
+
+### Features
+
+1. After selecting our quiz topic, we can then go and give the quiz.
+
+2. We can select only one option of the given four options. If you select the wrong option then a toast message will come up indicating you've given wrong answer and vice-versa for giving the right answer.
+
+3. There is an eye icon at every question, if we click it we can see the right answer of the question.
+
+4. In the right side section of the quiz, we can see a summary of how many right and wrong answers were given for the quiz.
+
+5. In the statistics page section, we can see a bar chart of the quiz topic indicating how many quiz questions are there for each topic.
+
+6. In the blogs section, there are three question answers.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
