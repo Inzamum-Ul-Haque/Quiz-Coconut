@@ -1,0 +1,9 @@
+.card-container {
+  box-shadow: 5px 5px 5px rgb(215, 249, 189);
+  border: none;
+}
+
+.btn {
+  background-color: #5bb318;
+  border: #5bb318;
+}

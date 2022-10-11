@@ -4,7 +4,7 @@ import Topics from "../Topics/Topics";
 
 const Home = () => {
   return (
-    <div className="container">
+    <div className="container home-container">
       <Heading />
       <Topics />
     </div>
