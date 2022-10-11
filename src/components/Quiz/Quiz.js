@@ -20,8 +20,8 @@ const Quiz = () => {
   return (
     <div className="container quiz-container">
       <h2 className="my-3">Quiz of {data.name}</h2>
-      <div className="row px-3 my-5">
-        <div className="col-9 p-0">
+      <div className="row flex-sm-column-reverse flex-lg-row px-3 my-5">
+        <div className="col-lg-9 col-sm-12 p-0">
           <div>
             {questions.map((question, idx) => (
               <Question
@@ -33,7 +33,7 @@ const Quiz = () => {
             ))}
           </div>
         </div>
-        <div className="col-3 p-0">Here will be summary</div>
+        <div className="col-lg-3 col-sm-12 p-0">Here will be summary</div>
       </div>
       <ToastContainer
         position="top-center"

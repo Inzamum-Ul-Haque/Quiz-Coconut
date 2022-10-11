@@ -43,8 +43,8 @@ const Question = ({ question, idx, showToast }) => {
       <div>
         <Row className="text-start">
           {options.map((option, _id) => (
-            <Col key={_id} lg={6} className=" gy-4">
-              <div className="border border-info p-4 rounded-3 d-flex fw-bold">
+            <Col key={_id} lg={6} className="gy-4">
+              <div className="border border-info p-4 rounded-3 d-flex fw-bold h-100 align-items-center">
                 <input
                   className="me-2"
                   type="radio"
