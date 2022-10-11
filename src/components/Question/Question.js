@@ -1,6 +1,10 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 import "./Question.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Question = ({ question, idx, showToast }) => {
   const { options } = question;
@@ -15,14 +19,22 @@ const Question = ({ question, idx, showToast }) => {
     } else {
       rightOption = false;
     }
-
     showToast(rightOption);
   };
 
+  const showAnswer = () => {
+    toast.info(`Correct Answer: ${question.correctAnswer}`);
+  };
+
   return (
-    <div className=" rounded-3 p-3 mb-4 question-container">
-      <div>
-        <p className="text-center">
+    <div className=" rounded-3 p-4 mb-4 question-container">
+      <div className="question">
+        <FontAwesomeIcon
+          onClick={showAnswer}
+          icon={faEye}
+          className="eye-icon"
+        />
+        <p className="text-start">
           <b>
             Quiz:{idx + 1} {question.question}
           </b>
@@ -47,6 +59,18 @@ const Question = ({ question, idx, showToast }) => {
           ))}
         </Row>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };

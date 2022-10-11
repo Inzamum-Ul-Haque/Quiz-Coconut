@@ -1,5 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=IBM+Plex+Mono:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic);
 
+.question-container .question {
+  position: relative;
+}
+
+.eye-icon {
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  right: -8px;
+}
+
 .question-container {
   font-family: "IBM Plex Mono", monospace;
   color: #5bb318;
