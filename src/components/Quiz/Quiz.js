@@ -2,10 +2,20 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import Question from "../Question/Question";
 import "./Quiz.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Quiz = () => {
   const { data } = useLoaderData();
   const { questions } = data;
+
+  const showToast = (rightOption) => {
+    if (rightOption) {
+      toast.success("Right answer!! 😃");
+    } else {
+      toast.error("Wrong answer!! 😢");
+    }
+  };
 
   return (
     <div className="container quiz-container">
@@ -14,12 +24,29 @@ const Quiz = () => {
         <div className="col-8 p-0">
           <div>
             {questions.map((question, idx) => (
-              <Question key={question.id} question={question} idx={idx} />
+              <Question
+                key={question.id}
+                question={question}
+                idx={idx}
+                showToast={showToast}
+              />
             ))}
           </div>
         </div>
         <div className="col-4 p-0">Here will be summary</div>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };

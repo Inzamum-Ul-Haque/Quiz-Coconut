@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { Col, Row } from "react-bootstrap";
 import "./Question.css";
 
-const Question = ({ question, idx }) => {
+const Question = ({ question, idx, showToast }) => {
   const { options } = question;
-  const [rightOption, setRightOption] = useState("");
+  let rightOption = false;
 
-  const handleChange = (id, e) => {
+  // function for getting the selected value from the option
+  const handleChange = (e) => {
     const { value } = e.target;
-    // console.log(id, value);
+
     if (value === question.correctAnswer) {
-      console.log("ok");
+      rightOption = true;
     } else {
-      console.log("not ok");
+      rightOption = false;
     }
+
+    showToast(rightOption);
   };
 
   return (
@@ -36,7 +39,7 @@ const Question = ({ question, idx }) => {
                   name={`quiz ${idx + 1}`}
                   id={idx + 1}
                   value={option}
-                  onChange={(e) => handleChange(question.id, e)}
+                  onChange={(e) => handleChange(e)}
                 />
                 <label htmlFor={`quiz ${idx + 1}`}>{option}</label>
               </div>
