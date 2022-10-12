@@ -29,7 +29,6 @@ const Quiz = () => {
     } else {
       quizResult = { ...quizResult, [quesId]: res };
     }
-    console.log(quizResult);
   };
 
   const showResult = () => {
