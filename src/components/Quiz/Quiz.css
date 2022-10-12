@@ -4,3 +4,11 @@
   font-family: "Lato", sans-serif;
   color: #5bb318;
 }
+
+.summary-container .correct {
+  color: #5bb318;
+}
+
+.summary-container .wrong {
+  color: red;
+}

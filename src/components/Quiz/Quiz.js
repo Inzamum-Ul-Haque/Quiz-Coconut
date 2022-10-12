@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Question from "../Question/Question";
 import "./Quiz.css";
@@ -7,13 +7,38 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Quiz = () => {
   const { data } = useLoaderData();
+  const [rightAnswer, setRightAnswer] = useState(0);
+  const [wrongAnswer, setWrongAnswer] = useState(0);
   const { questions } = data;
 
-  const showToast = (rightOption) => {
+  const showToast = (rightOption, quesId) => {
     if (rightOption) {
       toast.success("Right answer!! 😃");
+      storeResult(quesId, 1);
     } else {
       toast.error("Wrong answer!! 😢");
+      storeResult(quesId, 0);
+    }
+  };
+
+  // function for storing result in the localStorage
+  let quizResult = {};
+  const storeResult = (quesId, res) => {
+    if (quesId in quizResult) {
+      quizResult[quesId] = res;
+    } else {
+      quizResult = { ...quizResult, [quesId]: res };
+    }
+    console.log(quizResult);
+  };
+
+  const showResult = () => {
+    for (const id in quizResult) {
+      if (quizResult[id]) {
+        setRightAnswer((prev) => prev + 1);
+      } else {
+        setWrongAnswer((prev) => prev + 1);
+      }
     }
   };
 
@@ -33,7 +58,22 @@ const Quiz = () => {
             ))}
           </div>
         </div>
-        <div className="col-lg-3 col-sm-12 p-0">Here will be summary</div>
+        <div className="col-lg-3 col-sm-12 p-0">
+          <div className="border rounded-2 m-3 summary-container p-4">
+            <h2>Summary</h2>
+            <div className="d-flex justify-content-center my-3">
+              <h4 className="me-2 correct">Correct: </h4>
+              <h4 className="correct">{rightAnswer}</h4>
+            </div>
+            <div className="d-flex justify-content-center my-3">
+              <h4 className="me-2 wrong">Wrong: </h4>
+              <h4 className="wrong">{wrongAnswer}</h4>
+            </div>
+            <button className="btn" onClick={showResult}>
+              Click to see result
+            </button>
+          </div>
+        </div>
       </div>
       <ToastContainer
         position="top-center"

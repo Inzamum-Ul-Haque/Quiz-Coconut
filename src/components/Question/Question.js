@@ -19,7 +19,7 @@ const Question = ({ question, idx, showToast }) => {
     } else {
       rightOption = false;
     }
-    showToast(rightOption);
+    showToast(rightOption, question.id);
   };
 
   const showAnswer = () => {
