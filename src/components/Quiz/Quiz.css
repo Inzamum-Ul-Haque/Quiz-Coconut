@@ -5,6 +5,11 @@
   color: #5bb318;
 }
 
+.summary-container {
+  box-shadow: 5px 5px 5px #eef1ff;
+  border: none;
+}
+
 .summary-container .correct {
   color: #5bb318;
 }

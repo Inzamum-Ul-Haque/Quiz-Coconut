@@ -59,7 +59,7 @@ const Quiz = () => {
           </div>
         </div>
         <div className="col-lg-3 col-sm-12 p-0">
-          <div className="border rounded-2 m-3 summary-container p-4">
+          <div className=" rounded-2 m-3 summary-container p-4">
             <h2>Summary</h2>
             <div className="d-flex justify-content-center my-3">
               <h4 className="me-2 correct">Correct: </h4>
